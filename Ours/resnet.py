@@ -6,6 +6,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torchvision.models as models
+import os
 
 weight_dir = ''
 
@@ -161,9 +162,7 @@ class ResNet_Bottleneck_OS16(nn.Module):
             resnet = models.resnet50()
             # load pretrained model:
             resnet.load_state_dict(
-                torch.load(
-                    "/home/wjc/.cache/torch/hub/checkpoints/resnet50-19c8e357.pth"
-                ))
+                torch.hub.load_state_dict_from_url("https://download.pytorch.org/models/resnet50-19c8e357.pth", progress=True))
             # remove fully connected layer, avg pool and layer5:
             if self.multi_scale:
                 self.c2_layers = nn.Sequential(*list(resnet.children())[:5])
@@ -363,3 +362,14 @@ def ResNet18_OS8():
 
 def ResNet34_OS8():
     return ResNet_BasicBlock_OS8(num_layers=34)
+
+# 先下载模型到正确的位置
+model_path = os.path.expanduser("~/.cache/torch/hub/checkpoints/resnet50-19c8e357.pth")
+os.makedirs(os.path.dirname(model_path), exist_ok=True)
+if not os.path.exists(model_path):
+    import urllib.request
+    urllib.request.urlretrieve(
+        "https://download.pytorch.org/models/resnet50-19c8e357.pth", 
+        model_path
+    )
+model_path  # 返回正确的模型路径
