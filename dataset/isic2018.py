@@ -26,7 +26,7 @@ class myDataset(data.Dataset):
     def __init__(self, fold, split, aug=False):
         super(myDataset, self).__init__()
         self.split = split
-        root_data_dir = './ISIC2018/'
+        root_data_dir = './BUSI256/'
 
         # load images, label, point
         self.image_paths = []
