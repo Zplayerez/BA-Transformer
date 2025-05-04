@@ -84,7 +84,7 @@ elif parse_config.dataset == 'isic2016':
     dataset = myDataset(split='train', aug=parse_config.aug)
     dataset2 = myDataset(split='valid', aug=False)
 elif parse_config.dataset == 'busi256':
-    from dataset.busi import norm01, myDataset
+    from dataset.busi256 import norm01, myDataset
     dataset = myDataset(fold=parse_config.fold,
                         split='train',
                         aug=parse_config.aug)
