@@ -18,7 +18,7 @@ def norm01(x):
     return np.clip(x, 0, 255) / 255
 
 
-seperable_indexes = json.load(open('dataset/data_split_isic2018.json', 'r'))
+seperable_indexes = json.load(open('dataset/data_split_busi256.json', 'r'))
 
 
 # cross validation
@@ -26,7 +26,7 @@ class myDataset(data.Dataset):
     def __init__(self, fold, split, aug=False):
         super(myDataset, self).__init__()
         self.split = split
-        root_data_dir = './ISIC2018/'
+        root_data_dir = './BUSI256/'
 
         # load images, label, point
         self.image_paths = []

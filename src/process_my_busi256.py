@@ -230,7 +230,7 @@ def create_dataset_split(save_dir, k=5, train_ratio=0.7, val_ratio=0.1, test_rat
     with open('dataset/data_split.json', 'w') as f:
         json.dump(val_index, f)
     
-    print("数据集分割文件已保存到 dataset/data_split.json")
+    print("数据集分割文件已保存到 dataset/data_split_busi256.json")
     
     # 创建BUSI数据集的Python文件
     create_busi_dataset_file(save_dir)

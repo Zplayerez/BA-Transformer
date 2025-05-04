@@ -223,7 +223,7 @@ def create_dataset_split(save_dir, k=5):
     with open('dataset/data_split.json', 'w') as f:
         json.dump(val_index, f)
     
-    print("数据集分割文件已保存到 dataset/data_split.json")
+    print("数据集分割文件已保存到 dataset/data_split_isic2018.json")
 
 
 if __name__ == '__main__':

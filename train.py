@@ -79,11 +79,16 @@ if parse_config.dataset == 'isic2018':
                         split='train',
                         aug=parse_config.aug)
     dataset2 = myDataset(fold=parse_config.fold, split='valid', aug=False)
-#     dataset = myDataset(fold=parse_config.fold, split='train', aug=parse_config.aug)
 elif parse_config.dataset == 'isic2016':
     from dataset.isic2016 import norm01, myDataset
     dataset = myDataset(split='train', aug=parse_config.aug)
     dataset2 = myDataset(split='valid', aug=False)
+elif parse_config.dataset == 'busi256':
+    from dataset.busi import norm01, myDataset
+    dataset = myDataset(fold=parse_config.fold,
+                        split='train',
+                        aug=parse_config.aug)
+    dataset2 = myDataset(fold=parse_config.fold, split='valid', aug=False)
 
 train_loader = torch.utils.data.DataLoader(dataset,
                                            batch_size=parse_config.bt_size,
