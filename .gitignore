@@ -1,13 +1,3 @@
-# test module 个人习惯，测试目录去掉
-Cell_DETR
-weights
-logs/
 **/__pycache__
 **/*.pyc
-<<<<<<< HEAD
-<<<<<<< HEAD
-build/
-=======
->>>>>>> b37c2743a0c135f1baaeddad6207f5e071d770d9
-=======
->>>>>>> b37c2743a0c135f1baaeddad6207f5e071d770d9
+*.pkl

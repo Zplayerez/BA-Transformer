@@ -1,0 +1,4 @@
+[12:53:25.561] Dice value of test dataset  : 0.887449
+[12:53:25.561] Jc value of test dataset  : 0.815608
+[12:53:25.561] Hd95 value of test dataset  : 9.379832
+[12:53:25.561] Assd value of test dataset  : 2.046247
